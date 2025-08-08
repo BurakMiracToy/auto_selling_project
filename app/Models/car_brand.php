@@ -7,5 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class car_brand extends Model
 {
-    use HasFactory , softDeletes;
+    use HasFactory,softDeletes;
+
+    protected $table = 'car_brands';
+    public function getModel(){
+        return $this->hasMany(car_brand_model::class,'brand_id','id');
+    }
 }

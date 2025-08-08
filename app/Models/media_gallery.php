@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class media_gallery extends Model
 {
     use HasFactory, softDeletes;
+
+    public $table = 'media_galleries';
+
+    public function getCar(){
+        return $this->belongsTo(car::class,'car_id','id');
+    }
 }

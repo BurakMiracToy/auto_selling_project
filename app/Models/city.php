@@ -9,4 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class city extends Model
 {
     use HasFactory, softDeletes;
+
+    public function getTown(){
+        return $this->hasMany(town::class,'city_id','id');
+    }
 }
